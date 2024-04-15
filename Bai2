@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class bai2 {
+public class Bai2 {
     public static void main(String[] args) {
         int choice = -1;
         Scanner sc = new Scanner(System.in);
