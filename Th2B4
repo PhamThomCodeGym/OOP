@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Th2B4 {
+
+    public static void main(String[] args) {
+        int[] mangSoNguyen = {3, 5, 7, 2, 8, 1, 9, 4};
+        int giaTriNhoNhat = minValue(mangSoNguyen);
+        System.out.println("Giá trị nhỏ nhất trong mảng là: " + giaTriNhoNhat);
+    }
+
+    public static int minValue(int[] mang) {
+        int min = mang[0];
+        for (int i = 1; i < mang.length; i++) {
+            if (mang[i] < min) {
+                min = mang[i];
+            }
+        }
+        return min;
+    }
+}
