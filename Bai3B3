@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Bai3B3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Nhập số hàng của ma trận: ");
+        int soHang = scanner.nextInt();
+        System.out.print("Nhập số cột của ma trận: ");
+        int soCot = scanner.nextInt();
+        
+        double[][] maTran = new double[soHang][soCot];
+        System.out.println("Nhập các phần tử của ma trận:");
+        for (int i = 0; i < soHang; i++) {
+            for (int j = 0; j < soCot; j++) {
+                System.out.print("Phần tử [" + i + "][" + j + "]: ");
+                maTran[i][j] = scanner.nextDouble();
+            }
+        }
+        
+        double Max = maTran[0][0];
+        int hang = 0;
+        int cot = 0;
+        
+        for (int i = 0; i < soHang; i++) {
+            for (int j = 0; j < soCot; j++) {
+                if (maTran[i][j] > Max) {
+                    Max = maTran[i][j];
+                    hang = i;
+                    cot = j;
+                }
+            }
+        }
+        
+        System.out.println("Phần tử lớn nhất trong ma trận là " + Max + " tại vị trí [" + hang + "][" + cot + "]");
+    }
+}
