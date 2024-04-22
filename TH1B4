@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class ChuyenDoiNhietDo {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+        
+        do {
+            System.out.println("Menu:");
+            System.out.println("1. Fahrenheit to Celsius");
+            System.out.println("2. Celsius to Fahrenheit");
+            System.out.println("0. Exit");
+            System.out.print("Lựa chọn của bạn: ");
+            choice = scanner.nextInt();
+            
+            switch (choice) {
+                case 1:
+                    System.out.print("Nhập nhiệt độ Fahrenheit: ");
+                    double fahrenheit = scanner.nextDouble();
+                    System.out.println("Nhiệt độ Celsius tương ứng: " + fahrenheitToCelsius(fahrenheit));
+                    break;
+                case 2:
+                    System.out.print("Nhập nhiệt độ Celsius: ");
+                    double celsius = scanner.nextDouble();
+                    System.out.println("Nhiệt độ Fahrenheit tương ứng: " + celsiusToFahrenheit(celsius));
+                    break;
+                case 0:
+                    System.out.println("Thoát chương trình.");
+                    break;
+                default:
+                    System.out.println("Lựa chọn không hợp lệ!");
+            }
+        } while (choice != 0);
+    }
+    
+    public static double fahrenheitToCelsius(double fahrenheit) {
+        return (5.0 / 9) * (fahrenheit - 32);
+    }
+    
+    public static double celsiusToFahrenheit(double celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
+}
